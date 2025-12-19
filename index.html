@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sweetheart!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content-wrapper">
+                <div class="left-column">
+                    <div class="image-frame">
+                        <!-- Placeholder for the image provided by the user -->
+                        <img src="./Photo.jpg" alt="Birthday Girl" class="main-image">
+                        <div class="decorations">
+                            <div class="balloon"></div>
+                            <div class="balloon"></div>
+                            <div class="balloon"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <h1 class="birthday-title">Happy Birthday <span class="heart">♥</span></h1>
+
+                    <div class="countdown-container">
+                        <div class="time-segment">
+                            <span id="hours">00</span>
+                            <span class="label">HOURS</span>
+                        </div>
+                        <span class="separator">:</span>
+                        <div class="time-segment">
+                            <span id="minutes">00</span>
+                            <span class="label">MINUTES</span>
+                        </div>
+                        <span class="separator">:</span>
+                        <div class="time-segment">
+                            <span id="seconds">00</span>
+                            <span class="label">SECONDS</span>
+                        </div>
+                    </div>
+
+                    <div class="music-player">
+                        <audio id="birthday-song" src="song.mp3"></audio>
+                        <div class="controls">
+                            <span>⏮</span>
+                            <div class="play-btn" id="play-btn">▶</div>
+                            <span>⏭</span>
+                        </div>
+                        <div class="progress-bar" id="progress-container">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                    </div>
+
+                    <a href="surprise.html" class="surprise-btn">Surprise</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
