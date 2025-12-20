@@ -7,41 +7,102 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        .message {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-pink);
+        .letter-scroll-area {
+            width: 100%;
+            height: 500px;
+            overflow-y: auto;
+            text-align: left;
+            padding-right: 15px;
+            margin-top: 20px;
+        }
+        
+        /* Custom Scrollbar */
+        .letter-scroll-area::-webkit-scrollbar {
+            width: 8px;
+        }
+        .letter-scroll-area::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .letter-scroll-area::-webkit-scrollbar-thumb {
+            background: var(--primary-pink);
+            border-radius: 4px;
+        }
+
+        p {
             margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .content {
             font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            color: var(--primary-pink);
-            font-weight: 600;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
         }
-        /* Center the content in the card for this page */
-        .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            padding: 40px;
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Ensure the right column takes up space properly */
+        .right-column {
+            justify-content: flex-start; /* Align to top */
+            padding-top: 40px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <h1 class="message">12 baje kya?</h1>
-            <p class="content">
-                Sabar hi nai.
-            </p>
-            <br><br>
-            <a href="index.html" class="surprise-btn">Go Back</a>
+            <div class="content-wrapper">
+                <div class="left-column">
+                    <div class="image-frame">
+                        <!-- Using the main photo for the personal letter -->
+                        <img src="./Photo.jpg" alt="Birthday Girl" class="main-image">
+                        <div class="decorations">
+                            <div class="balloon"></div>
+                            <div class="balloon"></div>
+                            <div class="balloon"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <h1 class="birthday-title" style="font-size: 2.5rem;">My Dearest Drashti <span class="heart">💌</span></h1>
+                    
+                    <div class="letter-scroll-area" id="letter-content">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        const content = `For someone who gets on my nerves, for someone who doesnt laugh on my jokes, for someone who never listens to my advice, for someone who always slips even when her name is Drashti (majak bapuji :)), for someone who who makes me wait for hours in front of her office, for someone who always shushhh me when I'm saying something, for someone and some abc actual reason, I cannot complain about all this when that someone has always been my side, when that someone has made me laugh when I didnt want to smile, when that someone has come up with even more vahiyat joke than mine, when that someone has listened to me patiently, when that someone has waited  patiently for hours, when that someone and some xyz actual reason, fortunately that someone is YOU! and Unfortunately? Suri, there is no word as unfortunate when Drashti is my PARTNER my WIFE.
+
+Wishing you a very very Happy Delightful and Memorable Birthday my love. 
+
+I'm thankful to god that he gave me a complete package. But this sentence doesn't even come remotely close of hwo important you are to me , in terms of my favorite anime, you are Ichimonji of my Zoro, you are Grin of my Bakugo, you are Goal of my Isagi, I'm 100% sure you didn't understand a single thing of what they are - {even when I told you to watch anime with me} but ech toh che - tara par gusso nai kari sakto but hehe satavi toh sakuchu etle no letter directly - I have set up a time where each word will come up after 0.5 seconds only, 1 minute mukwu tu but Prem che maaru tu kyare hairan nathi karwu kyare dukh nathi pochawu kyare kaich aavi vastu nai karwu jenathi tane dukh thaaye. 
+
+The only thing I ever want to do with my life is to keep you happy is to make you smile is to make you proud jenathi everyday you wake up will be the best day of your life. And uske liye I promise - I'll do everything in my power. Most importantly PROPER GUJRATI sikhis ha, even though I speak Gujrati onli. Bleh.
+
+But I love you so so so muchhhh, above all the roles you are playing - BestFriend, Wife, CrimePartner, Mishti ni Mummy, Saas ki Bahu etc etc you will always be my Drashtudii first.
+
+Wishing you a blast-ful Birthday maari Dakuu.
+
+Muah.`;
+
+        const container = document.getElementById('letter-content');
+        // Split by double newlines to preserve paragraphs
+        const paragraphs = content.split('\n\n');
+        
+        paragraphs.forEach((paragraphText, index) => {
+            const p = document.createElement('p');
+            p.textContent = paragraphText;
+            // Stagger the fade in slightly for each paragraph
+            p.style.animationDelay = `${index * 0.5}s`;
+            container.appendChild(p);
+        });
+    </script>
 </body>
 </html>

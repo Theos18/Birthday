@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-container">
         <div class="card">
             <div class="content-wrapper">
                 <div class="left-column">
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="music-player">
-                        <audio id="birthday-song" src="song.mp3"></audio>
+                        <audio id="birthday-song" src="song.mp3" autoplay></audio>
                         <div class="controls">
                             <span>⏮</span>
                             <div class="play-btn" id="play-btn">▶</div>
@@ -60,6 +60,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Overlay for Birthday Celebration -->
+    <div id="birthday-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h1 class="overlay-title">Happy Birthday Drashti!</h1>            <button id="next-event-btn" class="surprise-btn" style="margin-top: 30px; display: none; background: white; color: #FF69B4; border: none;">Next Important Event</button>        </div>
+    </div>
+
+    <!-- Containers for effects -->
+    <div id="confetti-container"></div>
+    <div id="balloons-container"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
